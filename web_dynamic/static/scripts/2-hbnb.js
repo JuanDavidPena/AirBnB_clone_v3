@@ -14,11 +14,11 @@ $(document).ready(function () {
     });
 
     const available_status = $('div#api_status');
-    $.ajax('http://0.0.0.0:5001/api/v1/status/').done(function (status_code) {
-        console.log(status_code.status);
-        if (status_code.status === 'OK') {
+    $.ajax('http://localhost:5001/api/v1/status/').done(function (status_code) {
+        if (status_code.status === "OK") {
             available_status.addClass('available');
-        } else {
+        }
+        else {
             available_status.removeClass('available');
         }
     });
